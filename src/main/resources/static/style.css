@@ -10,6 +10,19 @@
     line-height: 1.4em;
 }
 
+body {
+    background-color: beige;
+}
+
+group-register{
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 200px;
+    height: 100px;
+    border: 3px solid #73AD21;
+}
+
 /*-------Media queries-------*/
 @media screen and (max-width: 700px) {
     h1 {
