@@ -1,7 +1,15 @@
 package com.supergroup.prototype.model;
 
 import javax.persistence.*;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.sql.Timestamp;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+import java.util.Date;
+import java.util.Locale;
 
 @Entity
 public class Visitor {
@@ -10,13 +18,69 @@ public class Visitor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // private LocalDateTime dateAndTime; // TODO: Skal bruges til timestamp
-    private String gender = "female"; // Female as default value
-    private String language = "Danish"; // Danish as default value
-    private String ageGroup = "60+"; // 60+ as default
-    private int groupSize = 2; // 2 as default
+    private Date timestamp;
+    private String gender;
+    private String language;
+    private String age_Group;
+    private int group_Size;
 
-    public Visitor() {
+    public Visitor(Date timestamp, String gender, String language, String age_Group, int group_Size) {
+        this.timestamp = timestamp;
+        this.gender = gender;
+        this.language = language;
+        this.age_Group = age_Group;
+        this.group_Size = group_Size;
     }
 
+    public Visitor() {
+
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Date getDateAndTime() {
+        return timestamp;
+    }
+
+    public void setDateAndTime(Date dateAndTime) {
+        this.timestamp = timestamp;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
+    public String getAgeGroup() {
+        return age_Group;
+    }
+
+    public void setAgeGroup(String ageGroup) {
+        this.age_Group = ageGroup;
+    }
+
+    public int getGroupSize() {
+        return group_Size;
+    }
+
+    public void setGroupSize(int groupSize) {
+        this.group_Size = groupSize;
+    }
 }
