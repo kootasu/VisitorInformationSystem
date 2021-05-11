@@ -29,15 +29,16 @@ public class VisitorController {
         return "visitors";
     }
 
-    @GetMapping("/create")
+    @GetMapping("/createVisitor")
     public String create(Model model){
-        return "create";
+        return "createVisitor";
     }
 
     @PostMapping("/create")
     public String create(@ModelAttribute Visitor visitor){
         Visitor newVisitor = visitorService.create(visitor);
-        return "redirect:/visitors";
+        visitorService.update(newVisitor);
+        return "redirect:/";
     }
 
     @GetMapping("/update/{id}")
