@@ -48,26 +48,72 @@
 <div class="sectionwrapper1" th:replace="fragments/header.html :: header"></div>
 
 <div class="container">
-    <div class="row justify-content-center">
-        <h1>Ny besøgende</h1>
-    </div>
-    <div class="row">
+    <div class="col-md-8 offset-md-2">
+        <h2>Ny besøgende</h2>
+
+        <div><br><br></div>
+
         <form action="/create" method="post" th:object="${visitor}">
 
-            <div class="form-group">
+            <!--<div class="form-group">
                 <input class="form-control" type="text" name="gender" placeholder="Køn">
+            </div>-->
+
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-secondary active btn-lg">
+                    <input type="radio" name="gender" id="female" autocomplete="off" value="female" checked> Kvinde
+                </label>
+                <label class="btn btn-secondary active btn-lg">
+                    <input type="radio" name="gender" id="male" autocomplete="off" value="male"> Mand
+                </label>
+                <label class="btn btn-secondary active btn-lg">
+                    <input type="radio" name="gender" id="non-binary" autocomplete="off" value="non-binary"> Non-binær
+                </label>
             </div>
 
-            <div class="form-group">
+            <div><br></div>
+
+            <!--<div class="form-group">
                 <input class="form-control" type="text" name="language" placeholder="Sprog">
+            </div>-->
+
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-secondary active btn-lg">
+                    <input type="radio" name="language" id="Danish" autocomplete="off" value="Danish" checked> Dansk
+                </label>
+                <label class="btn btn-secondary active btn-lg">
+                    <input type="radio" name="language" id="English" autocomplete="off" value="English"> Engelsk
+                </label>
+                <label class="btn btn-secondary active btn-lg">
+                    <input type="radio" name="language" id="other" autocomplete="off" value="other"> Andet
+                </label>
             </div>
 
-            <div class="form-group">
+            <div><br></div>
+
+            <!--<div class="form-group">
                 <input class="form-control" type="text" name="ageGroup" placeholder="Aldersgruppe">
+            </div>-->
+
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-secondary active btn-lg">
+                    <input type="radio" name="ageGroup" id="0-12" autocomplete="off" value="0-12"> 0-12
+                </label>
+                <label class="btn btn-secondary active btn-lg">
+                    <input type="radio" name="ageGroup" id="13-24" autocomplete="off" value="13-24"> 13-24
+                </label>
+                <label class="btn btn-secondary active btn-lg">
+                    <input type="radio" name="ageGroup" id="25-54" autocomplete="off" value="25-54"> 25-54
+                </label>
+                <label class="btn btn-secondary active btn-lg">
+                    <input type="radio" name="ageGroup" id="55+" autocomplete="off" value="55+" checked> 55+
+                </label>
             </div>
 
+            <div><br></div>
+
             <div class="form-group">
-                <input class="form-control" type="number" name="groupSize" placeholder="Gruppestørrelse">
+                <input class="form-control" type="number" name="groupSize" placeholder="Gruppestørrelse" min="1">
             </div>
 
             <p id="space"></p>

@@ -26,8 +26,10 @@
                 <th>Id</th>
                 <th>Tid & dato</th>
                 <th>Køn</th>
+                <th>Sprog</th>
                 <th>Aldersgruppe</th>
                 <th>Gruppestørrelse</th>
+                <th>Valgmuligheder</th>
             </tr>
             </thead>
             <tbody>
@@ -35,6 +37,7 @@
                 <td th:text="${v.id}"></td>
                 <td th:text="${v.dateAndTime}"></td>
                 <td th:text="${v.gender}"></td>
+                <td th:text="${v.language}"></td>
                 <td th:text="${v.ageGroup}"></td>
                 <td th:text="${v.groupSize}"></td>
                 <td>
