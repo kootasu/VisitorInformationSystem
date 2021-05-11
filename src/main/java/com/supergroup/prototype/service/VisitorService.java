@@ -17,7 +17,7 @@ public class VisitorService {
 
     public Set<Visitor> findAll(){
         Set<Visitor> visitors = new HashSet<>();
-        for (Visitor visitor : visitors) {
+        for (Visitor visitor : visitorRepository.findAll()) {
             visitors.add(visitor);
         }
         return visitors;

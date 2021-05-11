@@ -1,5 +1,7 @@
 package com.supergroup.prototype.model;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -10,7 +12,9 @@ public class Visitor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @CreationTimestamp
     private Date timestamp;
+
     private String gender;
     private String language;
     private String age_Group;
