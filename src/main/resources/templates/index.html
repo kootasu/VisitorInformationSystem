@@ -10,23 +10,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <th:block th:include="fragments/footer.html :: footerfiles"></th:block>
 </head>
-<body>
 
+<body>
 
 <div class="sectionwrapper1" th:replace="fragments/header.html :: header"></div>
 
 <div class="sectionwrapper1">
-    <center><h2><b>Vælg register</b></h2></center>
-    <div class="vertical-center">
-            <a href="/createVisitor" ><button class="button">Enkeltperson</button></a>
-            <a href="/createGroupOfVisitors" ><button class="button">Grupper</button></a>
+    <div style="text-align: center;"><h2><b>Registrer besøgende</b></h2></div>
+    <div><br><br></div>
+    <div class="col-md-12 text-center">
+        <button href="/individuals" class="btn btn-primary btn-lg">Enkeltperson</button>
+    </div>
+    <div><br><br></div>
+    <div class="col-md-12 text-center">
+        <button href="/groups" class="btn btn-primary btn-lg">Gruppe</button>
     </div>
 </div>
 
 <div class="sectionwrapper1" th:replace="fragments/footer.html :: footer"></div>
 
 </body>
-</div>
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
