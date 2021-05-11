@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.context.request.WebRequest;
 
 import java.util.Date;
 
@@ -19,42 +20,59 @@ public class VisitorController {
     VisitorService visitorService;
 
     @GetMapping("/")
-    public String index(){
+    public String index() {
         return "index";
     }
 
     @GetMapping("/visitors")
-    public String visitors(Model model){
+    public String visitors(Model model) {
         model.addAttribute("visitors", visitorService.findAll());
         return "visitors";
     }
 
     @GetMapping("/createVisitor")
-    public String create(Model model){
+    public String create() {
         return "createVisitor";
     }
 
     @PostMapping("/create")
-    public String create(@ModelAttribute Visitor visitor){
+    public String create(@ModelAttribute Visitor visitor) {
         Visitor newVisitor = visitorService.create(visitor);
         visitorService.update(newVisitor);
         return "redirect:/";
     }
 
+    @GetMapping("/createGroupOfVisitors")
+    public String createGroupOfVisitors(){
+        return "createGroupOfVisitors";
+    }
+
+    @PostMapping("/createGroup")
+    public String createGroup(@ModelAttribute Visitor visitor, WebRequest request) {
+        int groupQuantity = Integer.parseInt(request.getParameter("gruppeAntal"));
+        System.out.println(groupQuantity);
+        for (int i = 0; i < groupQuantity; i++) {
+            Visitor newVisitor = visitorService.create(visitor);
+            visitorService.update(newVisitor);
+            System.out.println("test");
+        }
+        return "redirect:/";
+    }
+
     @GetMapping("/update/{id}")
-    public String update(@PathVariable("id") long id, Model model){
+    public String update(@PathVariable("id") long id, Model model) {
         model.addAttribute("visitor", visitorService.findById(id));
         return "update";
     }
 
     @PostMapping("/update")
-    public String update(@ModelAttribute Visitor visitor){
+    public String update(@ModelAttribute Visitor visitor) {
         visitorService.update(visitor);
         return "redirect:/visitors";
     }
 
     @GetMapping("/delete/{id}")
-    public String delete(@PathVariable("id") long id, Model model){
+    public String delete(@PathVariable("id") long id, Model model) {
         visitorService.deleteById(id);
         return "redirect:/visitors";
     }

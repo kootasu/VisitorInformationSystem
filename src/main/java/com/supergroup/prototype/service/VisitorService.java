@@ -34,6 +34,12 @@ public class VisitorService {
     }
 
     public Visitor create(Visitor visitor){
+        if(visitor.getGender() == null){ visitor.setGender("Ukendt");
+        }
+        if(visitor.getAgeGroup() == null){ visitor.setAgeGroup("Ukendt");
+        }
+        if(visitor.getLanguage()==null){ visitor.setLanguage("Ukendt");
+        }
         return visitorRepository.save(visitor);
     }
 
