@@ -34,6 +34,18 @@ li {
     margin: auto;
 }
 
+.button{
+    display:inline-block;
+    text-align: center;
+}
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
 /*-------Media queries-------*/
 @media screen and (max-width: 700px) {
     h1 {
