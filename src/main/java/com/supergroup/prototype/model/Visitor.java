@@ -1,15 +1,7 @@
 package com.supergroup.prototype.model;
 
 import javax.persistence.*;
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.sql.Timestamp;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
 import java.util.Date;
-import java.util.Locale;
 
 @Entity
 public class Visitor {
@@ -32,9 +24,7 @@ public class Visitor {
         this.group_Size = group_Size;
     }
 
-    public Visitor() {
-
-    }
+    public Visitor() { }
 
     public Long getId() {
         return id;
