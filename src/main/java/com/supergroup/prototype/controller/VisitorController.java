@@ -51,11 +51,7 @@ public class VisitorController {
     public String createGroup(@ModelAttribute Visitor visitor, WebRequest request) {
         int groupQuantity = Integer.parseInt(request.getParameter("gruppeAntal"));
         System.out.println(groupQuantity);
-        for (int i = 0; i < groupQuantity; i++) {
-            Visitor newVisitor = visitorService.create(visitor);
-            visitorService.update(newVisitor);
-            System.out.println("test");
-        }
+        visitorService.createGroup(visitor, groupQuantity);
         return "redirect:/";
     }
 

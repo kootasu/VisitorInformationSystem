@@ -34,13 +34,20 @@ public class VisitorService {
     }
 
     public Visitor create(Visitor visitor){
-        if(visitor.getGender() == null){ visitor.setGender("Ukendt");
-        }
-        if(visitor.getAgeGroup() == null){ visitor.setAgeGroup("Ukendt");
-        }
-        if(visitor.getLanguage()==null){ visitor.setLanguage("Ukendt");
-        }
         return visitorRepository.save(visitor);
+    }
+
+    public void createGroup(Visitor visitor, int quantity){
+        for (int i = 0; i < quantity; i++) {
+            if(visitor.getGender() == null){ visitor.setGender("Ukendt");
+            }
+            if(visitor.getAgeGroup() == null){ visitor.setAgeGroup("Ukendt");
+            }
+            if(visitor.getLanguage()==null){ visitor.setLanguage("Ukendt");
+            }
+            visitor.setGroupSize(quantity);
+            visitorRepository.save(visitor);
+        }
     }
 
     public Visitor update(Visitor visitor){
