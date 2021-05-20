@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="utf-8">
 
@@ -15,9 +15,9 @@
   <center><div class="login">
 	<form>
 	<label>Brugernavn</label><br>
-	<input type="text" id="fname" name="fname"><br>
+	<input type="text" th:name="username"><br>
 	<label>Adgangskode</label><br>
-	<input type="password" id="fname" name="fname"><br>
+	<input type="password" th:name="password"><br>
 	<input type="submit" value="Login">
 	</form>
   </div></center>
