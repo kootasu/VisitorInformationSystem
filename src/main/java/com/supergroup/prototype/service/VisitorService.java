@@ -33,6 +33,7 @@ public class VisitorService {
 
     public Visitor create(Visitor visitor){
         visitor.setInLargeGroup(0);
+        visitor.setGuided_Tour("Ingen");
         return visitorRepository.save(visitor);
     }
 
@@ -45,12 +46,12 @@ public class VisitorService {
             }
             if(visitor.getLanguage()==null){ visitor.setLanguage("Ukendt");
             }
-            if(quantity>=6){ visitor.setInLargeGroup(0);
+            if(quantity>=6){ visitor.setInLargeGroup(1);
             }else{
                 visitor.setInLargeGroup(0);
             }
             visitor.setGroupSize(quantity);
-            temp.add(new Visitor(visitor.getDateAndTime(),visitor.getGender(),visitor.getLanguage(),visitor.getAgeGroup(),visitor.getGroupSize(),visitor.getInLargeGroup()));
+            temp.add(new Visitor(visitor.getDateAndTime(),visitor.getGender(),visitor.getLanguage(),visitor.getAgeGroup(),visitor.getGroupSize(),visitor.getInLargeGroup(), visitor.getGuided_Tour()));
         }
             return (List<Visitor>) visitorRepository.saveAll(temp);
     }

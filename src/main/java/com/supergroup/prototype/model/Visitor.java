@@ -20,14 +20,16 @@ public class Visitor {
     private String age_Group;
     private int group_Size;
     private int in_Large_Group;
+    private String guided_Tour;
 
-    public Visitor(Date timestamp, String gender, String language, String age_Group, int group_Size, int in_Large_Group) {
+    public Visitor(Date timestamp, String gender, String language, String age_Group, int group_Size, int in_Large_Group,String guided_Tour) {
         this.timestamp = timestamp;
         this.gender = gender;
         this.language = language;
         this.age_Group = age_Group;
         this.group_Size = group_Size;
         this.in_Large_Group = in_Large_Group;
+        this.guided_Tour = guided_Tour;
     }
 
     public Visitor() { }
@@ -88,4 +90,11 @@ public class Visitor {
         this.in_Large_Group = inLargeGroup;
     }
 
+    public String getGuided_Tour() {
+        return guided_Tour;
+    }
+
+    public void setGuided_Tour(String guided_Tour) {
+        this.guided_Tour = guided_Tour;
+    }
 }
