@@ -5,9 +5,7 @@ import com.supergroup.prototype.repository.VisitorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 @Service
 public class VisitorService {
@@ -34,20 +32,27 @@ public class VisitorService {
     }
 
     public Visitor create(Visitor visitor){
+        visitor.setInLargeGroup(0);
         return visitorRepository.save(visitor);
     }
 
-    public void createGroup(Visitor visitor, int quantity){
-        for (int i = 0; i < quantity; i++) {
+    public List<Visitor> createGroupVisitor(Visitor visitor, int quantity){
+        List<Visitor> temp = new ArrayList<>();
+        for (int i = 0; i <quantity ; i++) {
             if(visitor.getGender() == null){ visitor.setGender("Ukendt");
             }
             if(visitor.getAgeGroup() == null){ visitor.setAgeGroup("Ukendt");
             }
             if(visitor.getLanguage()==null){ visitor.setLanguage("Ukendt");
             }
+            if(quantity>=6){ visitor.setInLargeGroup(0);
+            }else{
+                visitor.setInLargeGroup(0);
+            }
             visitor.setGroupSize(quantity);
-            visitorRepository.save(visitor);
+            temp.add(new Visitor(visitor.getDateAndTime(),visitor.getGender(),visitor.getLanguage(),visitor.getAgeGroup(),visitor.getGroupSize(),visitor.getInLargeGroup()));
         }
+            return (List<Visitor>) visitorRepository.saveAll(temp);
     }
 
     public Visitor update(Visitor visitor){
