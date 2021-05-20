@@ -14,6 +14,10 @@ body {
     background-color: beige;
 }
 
+#image1 {
+    border: 5px solid #000000;
+}
+
 group-register{
     position: absolute;
     top: 80px;

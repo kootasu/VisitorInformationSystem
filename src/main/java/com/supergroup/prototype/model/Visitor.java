@@ -19,13 +19,15 @@ public class Visitor {
     private String language;
     private String age_Group;
     private int group_Size;
+    private int in_Large_Group;
 
-    public Visitor(Date timestamp, String gender, String language, String age_Group, int group_Size) {
+    public Visitor(Date timestamp, String gender, String language, String age_Group, int group_Size, int in_Large_Group) {
         this.timestamp = timestamp;
         this.gender = gender;
         this.language = language;
         this.age_Group = age_Group;
         this.group_Size = group_Size;
+        this.in_Large_Group = in_Large_Group;
     }
 
     public Visitor() { }
@@ -77,4 +79,13 @@ public class Visitor {
     public void setGroupSize(int groupSize) {
         this.group_Size = groupSize;
     }
+
+    public int getInLargeGroup() {
+        return in_Large_Group;
+    }
+
+    public void setInLargeGroup(int inLargeGroup) {
+        this.in_Large_Group = inLargeGroup;
+    }
+
 }

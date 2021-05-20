@@ -9,83 +9,84 @@
 </head>
 
 <body>
-<!--<center><h2><b>Tilføj besøgende i grupper</b></h2></center>
-  <div class="group-register">
+  <div class="sectionwrapper1" th:replace="fragments/header.html :: header"></div>
 
-  <form>
-  <form>
-  <h3>Tilføj gruppe</h3>
-  <label>Køn</label><br>
-  <input type="radio" id="male" name="gender" value="mand">
-  <label for="mand">Mand</label><br>
-  <input type="radio" id="female" name="gender" value="kvinde">
-  <label for="kvinde">Kvinde</label><br>
-  </form>
+  <div class="container">
+	  <div class="col-md-8 offset-md-2">
+		  <div class="row justify-content-center">
+			  <h1>Tilføj gruppe</h1>
+		  </div>
+		  <div>
+			  <form action="/createGroup" method="post">
+				  <div class="form-group">
+					  <input class="form-control" type="number" name="gruppeAntal" placeholder="Gruppe antal">
 
-  <form>
-  <label>Sprog</label><br>
-  <input type="radio" id="danish" name="gender" value="dansk">
-  <label for="dansk">Dansk</label><br>
-  <input type="radio" id="english" name="gender" value="engelsk">
-  <label for="engelsk">Engelsk</label><br>
-  </form>
+					  <p id="space"></p>
 
-  <form>
-  <label>Aldersgruppe</label><br>
-  <input type="radio" id="0-12" name="gender" value="male">
-  <label for="0-12">0-12</label><br>
-  <input type="radio" id="13-24" name="gender" value="male">
-  <label for="13-24">13-24</label><br>
-  <input type="radio" id="25-54" name="gender" value="male">
-  <label for="25-54">25-54</label><br>
-  <input type="radio" id="55+" name="gender" value="male">
-  <label for="55+">55+</label><br>
-  </form>
+					  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+						  <label class="btn btn-secondary active btn-lg">
+							  <input type="radio" name="language" id="Danish" autocomplete="off" value="Danish" checked> Dansk
+						  </label>
+						  <label class="btn btn-secondary active btn-lg">
+							  <input type="radio" name="language" id="English" autocomplete="off" value="English"> Engelsk
+						  </label>
+						  <label class="btn btn-secondary active btn-lg">
+							  <input type="radio" name="language" id="other" autocomplete="off" value="other"> Andet
+						  </label>
+					  </div>
 
-  <form>
-  <label>Antal personer</label><br>
-  <input type="text" id="fname" name="fname">
-  <label for="fname">personer</label>
-  </form>
-  <input type="submit" value="Indsend">
-  </form>
-</div>-->
-<div class="sectionwrapper1" th:replace="fragments/header.html :: header"></div>
+					  <div><br></div>
 
-<div class="container">
+					  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+						  <label class="btn btn-secondary active btn-lg">
+							  <input type="radio" name="ageGroup" id="0-12" autocomplete="off" value="0-12"> 0-12
+						  </label>
+						  <label class="btn btn-secondary active btn-lg">
+							  <input type="radio" name="ageGroup" id="13-24" autocomplete="off" value="13-24"> 13-24
+						  </label>
+						  <label class="btn btn-secondary active btn-lg">
+							  <input type="radio" name="ageGroup" id="25-54" autocomplete="off" value="25-54"> 25-54
+						  </label>
+						  <label class="btn btn-secondary active btn-lg">
+							  <input type="radio" name="ageGroup" id="55+" autocomplete="off" value="55+" checked> 55+
+						  </label>
+						  <label class="btn btn-secondary active btn-lg">
+							  <input type="radio" name="ageGroup" id="blandet" autocomplete="off" value="blandet"> blandet
+						  </label>
+					  </div>
 
-	<div class="row justify-content-center">
-		<h1>Gruppe</h1>
-	</div>
+					  <div><br></div>
 
-	<div><br><br></div>
+					  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+						  <label class="btn btn-secondary active btn-lg">
+							  <input type="radio" name="tour" id="guidedTour" autocomplete="off" value="guidedTour"> Omvisning
+						  </label>
+						  <label class="btn btn-secondary active btn-lg">
+							  <input type="radio" name="tour" id="educationTour" autocomplete="off" value="educationTour"> Undervisning
+						  </label>
+						  <label class="btn btn-secondary active btn-lg">
+							  <input type="radio" name="tour" id="ingen" autocomplete="off" value="ingen" checked> ingen
+						  </label>
+					  </div>
 
-	<div class="d-flex justify-content-center" style="text-align: center;">
-		<form action="/createGroup" method="post">
-			<div class="form-group">
-				<input class="form-control" type="number" name="gruppeAntal" placeholder="Antal personer" min="1">
+					  <div><br></div>
 
-				<div><br><br></div>
+					  <div class="form-group">
+						  <input type="submit" value="Registrer" class="btn btn-success" role="button">
+					  </div>
+				  </div>
+			  </form>
+		  </div>
+	  </div>
+  </div>
 
-				<div class="form-group">
-					<input type="submit" value="Registrer" class="btn btn-success btn-lg" role="button">
-				</div>
+  <div class="sectionwrapper1" th:replace="fragments/footer.html :: footer"></div>
 
-			</div>
-		</form>
-	</div>
-</div>
-</div>
-
-<div class="sectionwrapper1" th:replace="fragments/footer.html :: footer"></div>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-		crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-		crossorigin="anonymous"></script>
-
-
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		  crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+		  integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+		  crossorigin="anonymous"></script>
 </body>
 </html>

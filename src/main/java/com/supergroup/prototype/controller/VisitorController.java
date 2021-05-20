@@ -50,8 +50,7 @@ public class VisitorController {
     @PostMapping("/createGroup")
     public String createGroup(@ModelAttribute Visitor visitor, WebRequest request) {
         int groupQuantity = Integer.parseInt(request.getParameter("gruppeAntal"));
-        System.out.println(groupQuantity);
-        visitorService.createGroup(visitor, groupQuantity);
+        visitorService.createGroupVisitor(visitor, groupQuantity);
         return "redirect:/";
     }
 
