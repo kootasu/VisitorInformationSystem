@@ -14,22 +14,13 @@
   <div class="sectionwrapper1" th:replace="fragments/header.html :: header"></div>
 
   <div class="container">
-	  <div class="col-md-8 offset-md-2">
-		  <div class="row justify-content-center">
-			  <h1>Tilføj gruppe</h1>
-		  </div>
+
+	  <div><br><br></div>
+
+	  <div class="d-flex justify-content-center" style="text-align: center;">
 		  <div>
 			  <form action="/createGroup" method="post">
 				  <div class="form-group">
-
-					  <div class="slidecontainer">
-						  <p>Gruppestørrelse: <span id="demo"></span></p>
-						  <input type="range" min="6" max="50" value="6" class="slider" id="myRange" name="gruppeAntal">
-					  </div>
-
-<!--					  <input class="form-control" type="number" name="gruppeAntal" placeholder="Gruppe antal">-->
-
-					  <div><br></div>
 
 					  <div class="btn-group btn-group-toggle" data-toggle="buttons">
 						  <label class="btn btn-secondary active btn-lg">
@@ -73,14 +64,21 @@
 							  <input type="radio" name="guided_Tour" id="undervisning" autocomplete="off" value="undervisning"> Undervisning
 						  </label>
 						  <label class="btn btn-secondary active btn-lg">
-							  <input type="radio" name="guided_Tour" id="ingen" autocomplete="off" value="ingen" checked> ingen
+							  <input type="radio" name="guided_Tour" id="ingen" autocomplete="off" value="ingen" checked> Ingen
 						  </label>
 					  </div>
 
 					  <div><br></div>
 
+					  <div class="slidecontainer">
+						  <p><h3>Gruppestørrelse </h3><span id="demo"></span></p>
+						  <input type="range" min="6" max="50" value="6" class="slider" id="myRange" name="gruppeAntal">
+					  </div>
+
+					  <div><br></div>
+
 					  <div class="form-group">
-						  <input type="submit" value="Registrer" class="btn btn-success" role="button">
+						  <input type="submit" value="Registrer" class="btn btn-success btn-lg" role="button">
 					  </div>
 				  </div>
 			  </form>
