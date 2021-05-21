@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="style.css">
     <!-- Stylesheet with modifications for bootstrap styles -->
     <link rel="stylesheet" href="custom-bootstrap.css">
+    <!-- Icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <th:block th:include="fragments/footer.html :: footerfiles"></th:block>
 </head>
@@ -25,15 +27,10 @@
         <form action="/create" method="post" th:object="${visitor}">
 
             <div class="btn-group btn-group-toggle flex-wrap" data-toggle="buttons">
-                <label class="btn btn-secondary active btn-lg">
-                    <input type="radio" name="gender" id="female" autocomplete="off" value="female" checked> Kvinde
-                </label>
-                <label class="btn btn-secondary active btn-lg">
-                    <input type="radio" name="gender" id="male" autocomplete="off" value="male"> Mand
-                </label>
-                <label class="btn btn-secondary active btn-lg">
-                    <input type="radio" name="gender" id="non-binary" autocomplete="off" value="non-binary"> Non-binær
-                </label>
+                <button class="btn btn-secondary active btn-lg" input type="radio" name="gender" id="female" value="female" checked><i class="fa fa-female"></i></button>
+                <button class="btn btn-secondary active btn-lg" input type="radio" name="gender" id="male" value="male" checked><i class="fa fa-male"></i></button>
+                <button class="btn btn-secondary active btn-lg" input type="radio" name="gender" id="transgender" value="transgender" checked><i class="fa fa-transgender-alt"></i></button>
+                <button class="btn btn-secondary active btn-lg" input type="radio" name="gender" id="unknown" value="unknown" checked><i class="fa fa-question"></i></button>
             </div>
 
             <div><br></div>
