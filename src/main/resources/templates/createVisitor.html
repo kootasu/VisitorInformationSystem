@@ -6,60 +6,23 @@
           integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <!-- kun med for at vise, hvordan man tilgår css i preview og kørende app -->
     <link rel="stylesheet" href="style.css">
+    <!-- Stylesheet with modifications for bootstrap styles -->
+    <link rel="stylesheet" href="custom-bootstrap.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <th:block th:include="fragments/footer.html :: footerfiles"></th:block>
 </head>
 
 <body>
-<!-- <center><h2><b>Tilføj besøgende</b></h2></center>
- <div class="visitor-register">
-   <form>
-   <form>
-   <h3>Tilføj enkelt besøgende</h3>
-   <label>Køn</label><br>
-   <input type="radio" id="male" name="gender" value="mand">
-   <label for="mand">Mand</label><br>
-   <input type="radio" id="female" name="gender" value="kvinde">
-   <label for="kvinde">Kvinde</label>
-   </form>
 
-   <form>
-   <label>Sprog</label><br>
-   <input type="radio" id="danish" name="gender" value="dansk">
-   <label for="dansk">Dansk</label><br>
-   <input type="radio" id="english" name="gender" value="engelsk">
-   <label for="engelsk">Engelsk</label>
-   </form>
-
-   <form>
-   <label>Aldersgruppe</label><br>
-   <input type="radio" id="0-12" name="gender" value="male">
-   <label for="0-12">0-12</label><br>
-   <input type="radio" id="13-24" name="gender" value="male">
-   <label for="13-24">13-24</label><br>
-   <input type="radio" id="25-54" name="gender" value="male">
-   <label for="25-54">25-54</label><br>
-   <input type="radio" id="55+" name="gender" value="male">
-   <label for="55+">55+</label><br>
-   </form>
-     <input type="submit" value="Indsend">
-   </form>
- </div>-->
 <div class="sectionwrapper1" th:replace="fragments/header.html :: header"></div>
 
 <div class="container">
-
-    <div class="row justify-content-center"><h1>Enkeltperson</h1></div>
 
     <div><br><br></div>
 
     <div class="d-flex justify-content-center" style="text-align: center;">
 
         <form action="/create" method="post" th:object="${visitor}">
-
-            <!--<div class="form-group">
-                <input class="form-control" type="text" name="gender" placeholder="Køn">
-            </div>-->
 
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
                 <label class="btn btn-secondary active btn-lg">
@@ -75,10 +38,6 @@
 
             <div><br></div>
 
-            <!--<div class="form-group">
-                <input class="form-control" type="text" name="language" placeholder="Sprog">
-            </div>-->
-
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
                 <label class="btn btn-secondary active btn-lg">
                     <input type="radio" name="language" id="Danish" autocomplete="off" value="Danish" checked> Dansk
@@ -92,10 +51,6 @@
             </div>
 
             <div><br></div>
-
-            <!--<div class="form-group">
-                <input class="form-control" type="text" name="ageGroup" placeholder="Aldersgruppe">
-            </div>-->
 
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
                 <label class="btn btn-secondary active btn-lg">
@@ -114,11 +69,12 @@
 
             <div><br></div>
 
-            <div class="form-group">
-                <input class="form-control" type="number" name="groupSize" placeholder="Gruppestørrelse" min="1">
+            <div class="slidecontainer">
+                <p>Gruppestørrelse: <span id="demo"></span></p>
+                <input type="range" min="1" max="5" value="2" class="slider" id="myRange" name="groupSize">
             </div>
 
-            <p id="space"></p>
+            <div><br></div>
 
             <div class="form-group">
                 <input type="submit" value="Registrer" class="btn btn-success btn-lg" role="button">
@@ -136,6 +92,17 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
+
+<!--Slider script (https://www.w3schools.com/howto/howto_js_rangeslider.asp)-->
+<script>
+    var slider = document.getElementById("myRange");
+    var output = document.getElementById("demo");
+    output.innerHTML = slider.value;
+
+    slider.oninput = function() {
+        output.innerHTML = this.value;
+    }
+</script>
 
 </body>
 </html>

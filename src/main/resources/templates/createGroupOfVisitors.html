@@ -4,6 +4,8 @@
 		  integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 	<!-- kun med for at vise, hvordan man tilgår css i preview og kørende app -->
 	<link rel="stylesheet" href="style.css">
+	<!-- Stylesheet with modifications for bootstrap styles -->
+	<link rel="stylesheet" href="custom-bootstrap.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<th:block th:include="fragments/footer.html :: footerfiles"></th:block>
 </head>
@@ -19,9 +21,15 @@
 		  <div>
 			  <form action="/createGroup" method="post">
 				  <div class="form-group">
-					  <input class="form-control" type="number" name="gruppeAntal" placeholder="Gruppe antal">
 
-					  <p id="space"></p>
+					  <div class="slidecontainer">
+						  <p>Gruppestørrelse: <span id="demo"></span></p>
+						  <input type="range" min="6" max="50" value="6" class="slider" id="myRange" name="gruppeAntal">
+					  </div>
+
+<!--					  <input class="form-control" type="number" name="gruppeAntal" placeholder="Gruppe antal">-->
+
+					  <div><br></div>
 
 					  <div class="btn-group btn-group-toggle" data-toggle="buttons">
 						  <label class="btn btn-secondary active btn-lg">
@@ -51,7 +59,7 @@
 							  <input type="radio" name="ageGroup" id="55+" autocomplete="off" value="55+" checked> 55+
 						  </label>
 						  <label class="btn btn-secondary active btn-lg">
-							  <input type="radio" name="ageGroup" id="blandet" autocomplete="off" value="blandet"> blandet
+							  <input type="radio" name="ageGroup" id="blandet" autocomplete="off" value="blandet"> Blandet
 						  </label>
 					  </div>
 
@@ -88,5 +96,17 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
 		  integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
 		  crossorigin="anonymous"></script>
+
+  <!--Slider script (https://www.w3schools.com/howto/howto_js_rangeslider.asp)-->
+  <script>
+	  var slider = document.getElementById("myRange");
+	  var output = document.getElementById("demo");
+	  output.innerHTML = slider.value;
+
+	  slider.oninput = function() {
+		  output.innerHTML = this.value;
+	  }
+  </script>
+
 </body>
 </html>
