@@ -22,7 +22,7 @@
 			  <form action="/createGroup" method="post">
 				  <div class="form-group">
 
-					  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+					  <div class="btn-group btn-group-toggle flex-wrap" data-toggle="buttons">
 						  <label class="btn btn-secondary active btn-lg">
 							  <input type="radio" name="language" id="Danish" autocomplete="off" value="Dansk" checked> Dansk
 						  </label>
@@ -36,7 +36,7 @@
 
 					  <div><br></div>
 
-					  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+					  <div class="btn-group btn-group-toggle flex-wrap" data-toggle="buttons">
 						  <label class="btn btn-secondary active btn-lg">
 							  <input type="radio" name="ageGroup" id="0-12" autocomplete="off" value="0-12"> 0-12
 						  </label>
@@ -56,7 +56,7 @@
 
 					  <div><br></div>
 
-					  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+					  <div class="btn-group btn-group-toggle flex-wrap" data-toggle="buttons">
 						  <label class="btn btn-secondary active btn-lg">
 							  <input type="radio" name="guided_Tour" id="omvisning" autocomplete="off" value="omvisning"> Omvisning
 						  </label>
@@ -86,7 +86,8 @@
 	  </div>
   </div>
 
-  <div class="sectionwrapper1" th:replace="fragments/footer.html :: footer"></div>
+  <!--Footer-->
+  <!--<div class="sectionwrapper1" th:replace="fragments/footer.html :: footer"></div>-->
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
 		  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

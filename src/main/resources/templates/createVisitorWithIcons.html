@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <!-- Stylesheet with modifications for bootstrap styles -->
     <link rel="stylesheet" href="custom-bootstrap.css">
-    <!-- Icon library (check out cheat sheet: https://fontawesome.com/cheatsheet) -->
+    <!-- Font Awesome icon library (cheat sheet: https://fontawesome.com/cheatsheet) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <th:block th:include="fragments/footer.html :: footerfiles"></th:block>
@@ -27,10 +27,18 @@
         <form action="/create" method="post" th:object="${visitor}">
 
             <div class="btn-group btn-group-toggle flex-wrap" data-toggle="buttons">
-                <button class="btn btn-secondary active btn-lg" input type="radio" name="gender" id="female" value="female" checked><i class="fa fa-female"></i></button>
-                <button class="btn btn-secondary active btn-lg" input type="radio" name="gender" id="male" value="male" checked><i class="fa fa-male"></i></button>
-                <button class="btn btn-secondary active btn-lg" input type="radio" name="gender" id="transgender" value="transgender" checked><i class="fa fa-transgender-alt"></i></button>
-                <button class="btn btn-secondary active btn-lg" input type="radio" name="gender" id="unknown" value="unknown" checked><i class="fa fa-question"></i></button>
+                <label class="btn btn-secondary active btn-lg">
+                    <input type="radio" name="gender" id="female" autocomplete="off" value="female" checked> <i class="fa fa-female fa-2x"></i>
+                </label>
+                <label class="btn btn-secondary active btn-lg">
+                    <input type="radio" name="gender" id="male" autocomplete="off" value="male"> <i class="fa fa-male fa-2x"></i>
+                </label>
+                <label class="btn btn-secondary active btn-lg">
+                    <input type="radio" name="gender" id="transgender" autocomplete="off" value="transgender"> <i class="fa fa-transgender-alt fa-2x"></i>
+                </label>
+                <label class="btn btn-secondary active btn-lg">
+                    <input type="radio" name="gender" id="unknown" autocomplete="off" value="unknown"> <i class="fa fa-question fa-2x"></i>
+                </label>
             </div>
 
             <div><br></div>
@@ -81,7 +89,8 @@
     </div>
 </div>
 
-<div class="sectionwrapper1" th:replace="fragments/footer.html :: footer"></div>
+<!--Footer-->
+<!--<div class="sectionwrapper1" th:replace="fragments/footer.html :: footer"></div>-->
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
