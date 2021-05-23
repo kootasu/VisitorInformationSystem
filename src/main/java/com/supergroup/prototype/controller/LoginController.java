@@ -6,22 +6,30 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.context.request.WebRequest;
+import java.security.Principal;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.supergroup.prototype.model.User;
+import com.supergroup.prototype.service.UserService;
+
 
 @Controller
 public class LoginController {
-    User user = new User();
 
-    @RequestMapping("/login")
-    public String login(Model model, WebRequest webRequest, @RequestParam String username, @RequestParam String password) {
-        String userDatabase = webRequest.getParameter("username");
-        String passDatabase = webRequest.getParameter("password");
-        model.addAttribute("username", user.getUsername());
-        model.addAttribute("password", user.getPassword());
-        if(userDatabase == model.getAttribute("username")){
-            System.out.println("Så virker det");
-        } else{
-            System.out.println("Det virker ikke");
-        }
+    @Autowired
+    private UserService userService;
+
+
+    @RequestMapping("/")
+    public String viewHomePage(Model model, Principal principal) {
+        User user = userService.get(principal.getName());
+        model.addAttribute("user", user);
+
         return "index";
     }
 
