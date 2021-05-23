@@ -2,35 +2,20 @@
 
 .btn{
     background-color: #73AD21;
-    padding: 15px 20px;
+    padding: 20px 25px;
+    border: 2px solid white;
 }
 
 /*-------Register button-------*/
 
 .btn.btn-success{
-    padding: 20px 25px;
+    padding: 35px 40px;
 }
 
 /*-------Secondary button-------*/
 
 .btn.btn-secondary {
     background-color: orange;
-}
-.btn.btn-secondary.focus,
-.btn.btn-secondary:focus {
-    background-color: midnightblue;
-}
-.btn.btn-secondary.active,
-.btn.btn-secondary:active {
-    background-color: midnightblue;
-}
-.btn.btn-secondary.active.focus,
-.btn.btn-secondary.active:focus,
-.btn.btn-secondary.active:hover,
-.btn.btn-secondary:active.focus,
-.btn.btn-secondary:active:focus,
-.btn.btn-secondary:active:hover {
-    background-color: midnightblue;
 }
 
 /*-------Range slider-------*/

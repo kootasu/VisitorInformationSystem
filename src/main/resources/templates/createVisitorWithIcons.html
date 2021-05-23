@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="style.css">
     <!-- Stylesheet with modifications for bootstrap styles -->
     <link rel="stylesheet" href="custom-bootstrap.css">
+    <!-- Font Awesome icon library (cheat sheet: https://fontawesome.com/cheatsheet) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <th:block th:include="fragments/footer.html :: footerfiles"></th:block>
 </head>
@@ -26,13 +28,16 @@
 
             <div class="btn-group btn-group-toggle flex-wrap" data-toggle="buttons">
                 <label class="btn btn-secondary active btn-lg">
-                    <input type="radio" name="gender" id="female" autocomplete="off" value="female" checked> Kvinde
+                    <input type="radio" name="gender" id="female" autocomplete="off" value="female" checked> <i class="fa fa-female fa-2x"></i>
                 </label>
                 <label class="btn btn-secondary active btn-lg">
-                    <input type="radio" name="gender" id="male" autocomplete="off" value="male"> Mand
+                    <input type="radio" name="gender" id="male" autocomplete="off" value="male"> <i class="fa fa-male fa-2x"></i>
                 </label>
                 <label class="btn btn-secondary active btn-lg">
-                    <input type="radio" name="gender" id="non-binary" autocomplete="off" value="non-binary"> Non-binær
+                    <input type="radio" name="gender" id="transgender" autocomplete="off" value="transgender"> <i class="fa fa-transgender-alt fa-2x"></i>
+                </label>
+                <label class="btn btn-secondary active btn-lg">
+                    <input type="radio" name="gender" id="unknown" autocomplete="off" value="unknown"> <i class="fa fa-question fa-2x"></i>
                 </label>
             </div>
 

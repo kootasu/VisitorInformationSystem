@@ -35,6 +35,11 @@ public class VisitorController {
         return "createVisitor";
     }
 
+    @GetMapping("/createVisitorWithIcons")
+    public String createWithIcons() {
+        return "createVisitorWithIcons";
+    }
+
     @PostMapping("/create")
     public String create(@ModelAttribute Visitor visitor) {
         Visitor newVisitor = visitorService.create(visitor);
