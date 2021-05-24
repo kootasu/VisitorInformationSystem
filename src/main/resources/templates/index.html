@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="style.css">
     <!-- Stylesheet with modifications for bootstrap styles -->
     <link rel="stylesheet" href="custom-bootstrap.css">
+    <!-- Font Awesome icon library (cheat sheet: https://fontawesome.com/cheatsheet) -->
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <th:block th:include="fragments/footer.html :: footerfiles"></th:block>
 </head>
@@ -19,15 +21,15 @@
 
 <div class="sectionwrapper1">
 
-    <div class="row justify-content-center"><h1>Registrer besøgende</h1></div>
+    <div class="row justify-content-center"><h1>Registrer</h1></div>
 
     <div><br><br></div>
     <div style="text-align: center;">
-        <a href="/createVisitor" ><button class="btn btn-success btn-lg">Enkeltperson</button></a>
+        <a href="/createVisitor" ><button class="btn btn-success btn-lg"> <i class="fas fa-user-alt" style="font-size: 200%;"> 1-5</i> </button></a>
     </div>
     <div><br><br></div>
     <div style="text-align: center;">
-        <a href="/createGroupOfVisitors" ><button class="btn btn-success btn-lg">Gruppe</button></a>
+        <a href="/createGroupOfVisitors" ><button class="btn btn-success btn-lg"> <i class="fas fa-users" style="font-size: 200%;"> 6+</i> </button></a>
     </div>
 </div>
 
