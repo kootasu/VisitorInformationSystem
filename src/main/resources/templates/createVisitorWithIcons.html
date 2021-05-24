@@ -9,7 +9,9 @@
     <!-- Stylesheet with modifications for bootstrap styles -->
     <link rel="stylesheet" href="custom-bootstrap.css">
     <!-- Font Awesome icon library (cheat sheet: https://fontawesome.com/cheatsheet) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <!-- Flag icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <th:block th:include="fragments/footer.html :: footerfiles"></th:block>
 </head>
@@ -45,13 +47,14 @@
 
             <div class="btn-group btn-group-toggle flex-wrap" data-toggle="buttons">
                 <label class="btn btn-secondary active btn-lg">
-                    <input type="radio" name="language" id="Danish" autocomplete="off" value="Danish" checked> Dansk
+                    <input type="radio" name="language" id="Danish" autocomplete="off" value="Danish" checked> <i class="flag-icon flag-icon-dk" style="font-size: 150%;"></i>
                 </label>
                 <label class="btn btn-secondary active btn-lg">
-                    <input type="radio" name="language" id="English" autocomplete="off" value="English"> Engelsk
+                    <input type="radio" name="language" id="English" autocomplete="off" value="English"> <i class="flag-icon flag-icon-gb" style="font-size: 150%;"></i>
                 </label>
                 <label class="btn btn-secondary active btn-lg">
-                    <input type="radio" name="language" id="other" autocomplete="off" value="other"> Andet
+                    <input type="radio" name="language" id="other" autocomplete="off" value="other"> <i class="fa fa-globe fa-2x"></i>
+
                 </label>
             </div>
 
@@ -59,23 +62,23 @@
 
             <div class="btn-group btn-group-toggle flex-wrap" data-toggle="buttons">
                 <label class="btn btn-secondary active btn-lg">
-                    <input type="radio" name="ageGroup" id="0-12" autocomplete="off" value="0-12"> 0-12
+                    <input type="radio" name="ageGroup" id="0-12" autocomplete="off" value="0-12"> <i class="fa fa-leaf fa-2x"></i>
                 </label>
                 <label class="btn btn-secondary active btn-lg">
-                    <input type="radio" name="ageGroup" id="13-24" autocomplete="off" value="13-24"> 13-24
+                    <input type="radio" name="ageGroup" id="13-24" autocomplete="off" value="13-24"> <i class="fas fa-seedling fa-2x"></i>
                 </label>
                 <label class="btn btn-secondary active btn-lg">
-                    <input type="radio" name="ageGroup" id="25-54" autocomplete="off" value="25-54"> 25-54
+                    <input type="radio" name="ageGroup" id="25-54" autocomplete="off" value="25-54"> <i class="fab fa-pagelines fa-2x"></i>
                 </label>
                 <label class="btn btn-secondary active btn-lg">
-                    <input type="radio" name="ageGroup" id="55+" autocomplete="off" value="55+" checked> 55+
+                    <input type="radio" name="ageGroup" id="55+" autocomplete="off" value="55+" checked> <i class="fa fa-tree fa-2x"></i>
                 </label>
             </div>
 
             <div><br></div>
 
             <div class="slidecontainer">
-                <p><h3>Gruppestørrelse </h3><span id="demo"></span></p>
+                <p><i class="fas fa-people-arrows fa-2x"></i> <span id="demo"></span></p>
                 <input type="range" min="1" max="5" value="2" class="slider" id="myRange" name="groupSize">
             </div>
 
