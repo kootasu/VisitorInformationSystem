@@ -3,12 +3,10 @@ package com.supergroup.prototype.controller;
 import com.supergroup.prototype.model.Visitor;
 import com.supergroup.prototype.service.VisitorService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.WebRequest;
 
 import java.util.Date;
@@ -40,7 +38,7 @@ public class VisitorController {
         return "createVisitorWithIcons";
     }
 
-    @PostMapping("/create")
+    @RequestMapping(value = "/create", method = RequestMethod.POST, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public String create(@ModelAttribute Visitor visitor) {
         Visitor newVisitor = visitorService.create(visitor);
         visitorService.update(newVisitor);
@@ -52,7 +50,7 @@ public class VisitorController {
         return "createGroupOfVisitors";
     }
 
-    @PostMapping("/createGroup")
+    @RequestMapping(value = "/createGroup", method = RequestMethod.POST, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public String createGroup(@ModelAttribute Visitor visitor, WebRequest request) {
         int groupQuantity = Integer.parseInt(request.getParameter("gruppeAntal"));
         visitorService.createGroupVisitor(visitor, groupQuantity);

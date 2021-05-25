@@ -22,7 +22,7 @@
 
     <div class="d-flex justify-content-center" style="text-align: center;">
 
-        <form action="/create" method="post" th:object="${visitor}">
+        <form th:action="@{/create}" method="POST" th:object="${visitor}">
 
             <div class="btn-group btn-group-toggle flex-wrap" data-toggle="buttons">
                 <label class="btn btn-secondary active btn-lg">
