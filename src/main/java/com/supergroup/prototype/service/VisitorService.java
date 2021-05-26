@@ -33,18 +33,18 @@ public class VisitorService {
 
     public Visitor create(Visitor visitor){
         visitor.setInLargeGroup(0);
-        visitor.setGuided_Tour("Ingen");
+        visitor.setGuided_Tour("ingen");
         return visitorRepository.save(visitor);
     }
 
     public List<Visitor> createGroupVisitor(Visitor visitor, int quantity){
         List<Visitor> temp = new ArrayList<>();
         for (int i = 0; i <quantity ; i++) {
-            if(visitor.getGender() == null){ visitor.setGender("Ukendt");
+            if(visitor.getGender() == null){ visitor.setGender("ukendt");
             }
-            if(visitor.getAgeGroup() == null){ visitor.setAgeGroup("Ukendt");
+            if(visitor.getAgeGroup() == null){ visitor.setAgeGroup("ukendt");
             }
-            if(visitor.getLanguage()==null){ visitor.setLanguage("Ukendt");
+            if(visitor.getLanguage()==null){ visitor.setLanguage("ukendt");
             }
             if(quantity>=6){ visitor.setInLargeGroup(1);
             }else{
