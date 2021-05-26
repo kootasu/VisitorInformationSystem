@@ -17,46 +17,46 @@ public class VisitorController {
     @Autowired
     VisitorService visitorService;
 
-    @GetMapping("/")
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index() {
         return "index";
     }
 
-    @GetMapping("/visitors")
+    @RequestMapping(value = "/visitors", method = RequestMethod.GET)
     public String visitors(Model model) {
         model.addAttribute("visitors", visitorService.findAll());
         return "visitors";
     }
 
-    @GetMapping("/createVisitor")
+    @RequestMapping(value = "/createVisitor", method = RequestMethod.GET)
     public String create() {
         return "createVisitor";
     }
 
-    @GetMapping("/createVisitorWithIcons")
+    @RequestMapping(value = "/createVisitorWithIcons", method = RequestMethod.GET)
     public String createWithIcons() {
         return "createVisitorWithIcons";
     }
 
-    @RequestMapping(value = "/create", method = RequestMethod.POST, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
     public String create(@ModelAttribute Visitor visitor) {
         Visitor newVisitor = visitorService.create(visitor);
         visitorService.update(newVisitor);
         return "redirect:/";
     }
 
-    @GetMapping("/createGroupOfVisitors")
+    @RequestMapping(value = "/createGroupOfVisitors", method = RequestMethod.GET)
     public String createGroupOfVisitors(){
         return "createGroupOfVisitors";
     }
 
-    @RequestMapping(value = "/createGroup", method = RequestMethod.POST, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @RequestMapping(value = "/createGroup", method = RequestMethod.POST)
     public String createGroup(@ModelAttribute Visitor visitor, WebRequest request) {
         int groupQuantity = Integer.parseInt(request.getParameter("gruppeAntal"));
         visitorService.createGroupVisitor(visitor, groupQuantity);
         return "redirect:/";
     }
-
+/*
     @GetMapping("/update/{id}")
     public String update(@PathVariable("id") long id, Model model) {
         model.addAttribute("visitor", visitorService.findById(id));
@@ -74,4 +74,6 @@ public class VisitorController {
         visitorService.deleteById(id);
         return "redirect:/visitors";
     }
+
+ */
 }
