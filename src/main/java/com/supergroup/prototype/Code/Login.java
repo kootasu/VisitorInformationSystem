@@ -3,7 +3,7 @@ package com.supergroup.prototype.Code;
 import org.springframework.context.annotation.Configuration;
 /*import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;*/
-// HEy
+
 public class Login {
 
    /* @Configuration
