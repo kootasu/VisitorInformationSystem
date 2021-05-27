@@ -3,13 +3,10 @@ package com.supergroup.prototype.controller;
 import com.supergroup.prototype.model.Visitor;
 import com.supergroup.prototype.service.VisitorService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.WebRequest;
-
-import java.util.Date;
 
 @Controller
 public class VisitorController {
@@ -29,13 +26,8 @@ public class VisitorController {
     }
 
     @RequestMapping(value = "/createVisitor", method = RequestMethod.GET)
-    public String create() {
-        return "createVisitor";
-    }
-
-    @RequestMapping(value = "/createVisitorWithIcons", method = RequestMethod.GET)
     public String createWithIcons() {
-        return "createVisitorWithIcons";
+        return "createVisitor";
     }
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
@@ -56,7 +48,7 @@ public class VisitorController {
         visitorService.createGroupVisitor(visitor, groupQuantity);
         return "redirect:/";
     }
-/*
+
     @GetMapping("/update/{id}")
     public String update(@PathVariable("id") long id, Model model) {
         model.addAttribute("visitor", visitorService.findById(id));
@@ -75,5 +67,4 @@ public class VisitorController {
         return "redirect:/visitors";
     }
 
- */
 }
