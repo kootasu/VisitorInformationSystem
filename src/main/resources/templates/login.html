@@ -9,31 +9,19 @@
     <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <style>
-        #footer {
-            position: fixed;
-            padding: 10px 10px 0px 10px;
-            bottom: 0;
-            width: 100%;
-            /* Height of the footer*/
-            height: 40px;
-            background: grey;
-        }
-    </style>
-
 </head>
 
 <body>
 
 <div class="sectionwrapper1" th:replace="fragments/headerULogUd.html :: header"></div>
 
-<div class="container">
+<div class="container" id="login-box">
     <div class="row justify-content-center">
-        <h1>Login</h1>
+        <h1>Log ind</h1>
     </div>
     <div style="text-align:center">
-        <div class="row " style="position: relative; left: 35%;">
-            <form name="f" th:action="@{/login}" method="post">
+        <div class="row justify-content-center">
+            <form name="f"  th:action="@{/login}" method="post">
 
                 <div th:if="${param.error}" class="alert alert-danger">
                     Ugyldigt brugernavn eller adgangskode
@@ -41,18 +29,19 @@
                 <div th:if="${param.logout}" class="alert alert-success">
                     Du er blevet logget ud
                 </div>
-                <div class=" form-group">
-                    <label for="username">Brugernavn</label>
-                    <input type="text" id="username" name="username"/>
-                </div>
+                <div>
+                    <div style="margin-bottom: 10px">
+                        <label for="username">Brugernavn</label>
+                        <input type="text" id="username" name="username"/>
+                    </div>
 
-                <div class="form-group">
-                    <label for="password">Adgangskode</label>
-                    <input type="password" id="password" name="password"/>
-
+                    <div style="margin-bottom: 10px">
+                        <label for="password">Adgangskode</label>
+                        <input type="password" id="password" name="password" style="margin-right:17px"/>
+                    </div>
                 </div>
                 <div class="form-group form-actions">
-                    <input type="submit" value="Log in" class="btn btn-success" role="button">
+                    <input type="submit" value="Log ind" class="btn btn-success" role="button">
                 </div>
             </form>
         </div>

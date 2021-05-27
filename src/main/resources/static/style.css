@@ -20,6 +20,35 @@
     line-height: 1.4em;
 }
 
+#login-box div {
+    width: 300px;
+    border: 15px solid #000000;
+    padding: 50px;
+    margin: 20px;
+}
+
+#center-login{
+    left: 35%;
+    position: relative;
+}
+
+.formInputs {
+    position: relative;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.formInputs input {
+    width: 100%;
+}
+
+.formInputs label {
+    position: absolute;
+    right: 100%;
+    padding-right: 10px;
+    white-space: nowrap;
+}
+
 body {
     background-color: beige;
 }
