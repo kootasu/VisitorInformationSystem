@@ -3,65 +3,60 @@ package com.supergroup.prototype.controller;
 import com.supergroup.prototype.model.Visitor;
 import com.supergroup.prototype.service.VisitorService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.WebRequest;
 
 import java.util.Date;
 
 @Controller
-@CrossOrigin
 public class VisitorController {
 
     @Autowired
     VisitorService visitorService;
 
-    @GetMapping("/")
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index() {
         return "index";
     }
 
-    @GetMapping("/visitors")
+    @RequestMapping(value = "/visitors", method = RequestMethod.GET)
     public String visitors(Model model) {
         model.addAttribute("visitors", visitorService.findAll());
         return "visitors";
     }
 
-    @GetMapping("/createVisitor")
+    @RequestMapping(value = "/createVisitor", method = RequestMethod.GET)
     public String create() {
         return "createVisitor";
     }
 
-    @GetMapping("/createVisitorWithIcons")
+    @RequestMapping(value = "/createVisitorWithIcons", method = RequestMethod.GET)
     public String createWithIcons() {
         return "createVisitorWithIcons";
     }
-    
-    @PostMapping("/create")
-    public String create(@ModelAttribute Visitor visitor ) {
+
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
+    public String create(@ModelAttribute Visitor visitor) {
         Visitor newVisitor = visitorService.create(visitor);
         visitorService.update(newVisitor);
         return "redirect:/";
     }
 
-    @GetMapping("/createGroupOfVisitors")
+    @RequestMapping(value = "/createGroupOfVisitors", method = RequestMethod.GET)
     public String createGroupOfVisitors(){
         return "createGroupOfVisitors";
     }
 
-    @PostMapping("/createGroup")
+    @RequestMapping(value = "/createGroup", method = RequestMethod.POST)
     public String createGroup(@ModelAttribute Visitor visitor, WebRequest request) {
         int groupQuantity = Integer.parseInt(request.getParameter("gruppeAntal"));
         visitorService.createGroupVisitor(visitor, groupQuantity);
         return "redirect:/";
     }
-
+/*
     @GetMapping("/update/{id}")
     public String update(@PathVariable("id") long id, Model model) {
         model.addAttribute("visitor", visitorService.findById(id));
@@ -79,4 +74,6 @@ public class VisitorController {
         visitorService.deleteById(id);
         return "redirect:/visitors";
     }
+
+ */
 }
