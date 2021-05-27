@@ -7,10 +7,16 @@
 <body>
 <div>
 <header id="myTopnav" th:fragment="header">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/"><img src="/images/Davids_samling_logo_2.PNG" class="responsive" width="60px" height="60px"></a>
-        <a class="navbar-brand" href="/logout"><img src="/images/logout.png" class="responsive-logout" width="60px" height="60px"></a>
-    </nav>
+    <div>
+        <div class="topnav">
+            <a href="/"></a>
+            <a href="/logout">
+                <img src="/images/logout.png" class="responsive" width="30px" height="35px"></a>
+            <a href="javascript:void(0);" class="icon" onclick="burgerMenu()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </div>
 </header>
 </div>
 </body>
