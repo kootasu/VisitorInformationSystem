@@ -29,7 +29,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/resources/**","/h2-console/**","/static/**", "/css/**", "/js/**", "/images/**","/update/css/style.css");
+        web.ignoring().antMatchers("/resources/**","/h2-console/**","/static/**", "/css/**", "/js/**", "/images/**","/update/css/style.css", "/resources/static/style.css");
     }
 
     @Override
